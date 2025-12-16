@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Healthcare Colors -->
+    <color name="primary_blue">#2196F3</color>
+    <color name="primary_blue_dark">#1976D2</color>
+    <color name="primary_blue_light">#42A5F5</color>
+
+    <!-- Secondary Medical Colors -->
+    <color name="medical_green">#4CAF50</color>
+    <color name="medical_green_dark">#388E3C</color>
+    <color name="medical_green_light">#66BB6A</color>
+
+    <!-- Emergency/Alert Colors -->
+    <color name="emergency_red">#F44336</color>
+    <color name="emergency_red_dark">#D32F2F</color>
+    <color name="warning_orange">#FF9800</color>
+    <color name="warning_amber">#FFC107</color>
+
+    <!-- Professional Purple Accent -->
+    <color name="accent_purple">#9C27B0</color>
+    <color name="accent_purple_light">#BA68C8</color>
+
+    <!-- Neutral/Background Colors -->
+<!--    <color name="white">#FFFFFF</color>-->
+    <color name="background_light">#F8F9FA</color>
+    <color name="background_card">#FFFFFF</color>
+    <color name="surface">#FAFAFA</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+    <color name="text_white">#FFFFFF</color>
+
+    <!-- Divider/Border Colors -->
+    <color name="divider">#E0E0E0</color>
+    <color name="border_light">#EEEEEE</color>
+
+    <!-- Status Colors -->
+    <color name="status_active">#4CAF50</color>
+    <color name="status_inactive">#9E9E9E</color>
+    <color name="status_warning">#FF9800</color>
+    <color name="status_danger">#F44336</color>
+
+    <!-- Gradient Colors -->
+    <color name="gradient_blue_start">#1E88E5</color>
+    <color name="gradient_blue_end">#42A5F5</color>
+    <color name="gradient_green_start">#43A047</color>
+    <color name="gradient_green_end">#66BB6A</color>
+    <color name="gradient_purple_start">#8E24AA</color>
+    <color name="gradient_purple_end">#AB47BC</color>
+
+    <!-- Overlay Colors -->
+    <color name="overlay_dark">#80000000</color>
+    <color name="overlay_light">#40FFFFFF</color>
+
+    <!-- Shadow Color -->
+    <color name="shadow">#1A000000</color>
+
+
+    <color name="purple_700">#3700B3</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+
+    <!-- Required basic colors -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+</resources>
