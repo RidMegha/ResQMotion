@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ResQMotion</string>
+    <string name="monitoring_active">Monitoring Active</string>
+    <string name="monitoring_stopped">Monitoring Stopped</string>
+    <string name="fall_detected">Fall Detected!</string>
+    <string name="emergency_alert">Emergency Alert Sent</string>
+    <string name="cancel_alert">Cancel Alert</string>
+    <string name="start_monitoring">Start Monitoring</string>
+    <string name="stop_monitoring">Stop Monitoring</string>
+    <string name="activity_unknown">Activity: Unknown</string>
+    <string name="confidence_format">Confidence: %.1f%%</string>
+    <string name="system_status">System Status</string>
+    <string name="activity_recognition">Activity Recognition</string>
+    <string name="controls">Controls</string>
+    <string name="information">Information</string>
+    <string name="emergency_contact">Emergency Contact</string>
+</resources>
