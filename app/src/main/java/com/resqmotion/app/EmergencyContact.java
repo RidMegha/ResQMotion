@@ -1,4 +1,4 @@
-package com.example.falldetectionapp;
+package com.resqmotion.app;
 
 public class EmergencyContact {
     private String name;

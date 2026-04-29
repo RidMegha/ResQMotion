@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.falldetectionapp"
+    namespace = "com.resqmotion.app"
     compileSdk = 36
     // 36 not officially released yet
 
     defaultConfig {
-        applicationId = "com.example.falldetectionapp"
+        applicationId = "com.resqmotion.app"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

@@ -4,7 +4,7 @@
 
 ########## YOUR APP CLASSES ##########
 # Replace with your final namespace
--keep class com.example.falldetectionapp.** { *; }
+-keep class com.resqmotion.app.** { *; }
 
 ########## NATIVE METHODS ##########
 -keepclasseswithmembernames class * {

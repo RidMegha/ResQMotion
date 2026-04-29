@@ -1,6 +1,6 @@
 //  new main activity.java code for splash and profile setup
 
-package com.example.falldetectionapp;
+package com.resqmotion.app;
 
 import android.Manifest;
 import android.content.Intent;

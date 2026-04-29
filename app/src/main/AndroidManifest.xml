@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.falldetectionapp">
+    package="com.resqmotion.app">
     <!-- Permissions -->
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FallDetectionApp">
         <activity
-            android:name=".SplashActivity"
+            android:name="com.resqmotion.app.SplashActivity"
             android:exported="false"
             android:theme="@style/Theme.FallDetectionApp">
             <intent-filter>
@@ -26,15 +26,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ProfileSetupActivity"
+            android:name="com.resqmotion.app.ProfileSetupActivity"
             android:exported="false" /> <!-- Main App -->
         <activity
-            android:name=".MainActivity"
+            android:name="com.resqmotion.app.MainActivity"
             android:exported="false" /> <!-- Emergency Contacts -->
         <activity
-            android:name=".EmergencyContactsActivity"
+            android:name="com.resqmotion.app.EmergencyContactsActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.resqmotion.app.MainActivity" />
     </application>
 
 </manifest>
