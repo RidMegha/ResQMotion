@@ -2,44 +2,115 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.resqmotion.app">
 
-    <!-- Optional: Allow app on devices without telephony -->
+    <!-- ─────────────────────────────────────────────────────
+         HARDWARE FEATURES
+         ───────────────────────────────────────────────────── -->
+
+    <!-- Telephony optional – app works on tablets too -->
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
 
-    <!-- Sensors (required for fall detection) -->
-    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
-    <uses-feature android:name="android.hardware.sensor.gyroscope" android:required="true" />
+    <!-- Sensors required for fall detection -->
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.sensor.gyroscope"
+        android:required="true" />
 
-    <!-- Permissions -->
+    <!-- ─────────────────────────────────────────────────────
+         PERMISSIONS – EXISTING
+         ───────────────────────────────────────────────────── -->
+
+    <!-- Network -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <!-- SMS for emergency alerts -->
     <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <!-- Call button in family dashboard -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
+    <!-- Location – coarse already existed -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+    <!-- Vibrate on fall alert -->
     <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Push notifications (Android 13+) -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
+    <!-- ─────────────────────────────────────────────────────
+         PERMISSIONS – NEW FOR PHASE 5 GPS
+         ───────────────────────────────────────────────────── -->
+
+    <!-- Background location – needed so GPS works even when
+         app is in background while monitoring is running.
+         Android 10+ requires this declared separately.
+         User will see a separate permission dialog for this. -->
+    <uses-permission
+        android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <!-- Foreground service – required to keep GPS + sensor
+         monitoring alive when screen is off (Android 9+) -->
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!-- Foreground service type = location (Android 14+ requirement) -->
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+
+    <!-- Wake lock – keeps CPU alive during background monitoring
+         so fall detection doesn't stop when screen turns off -->
+    <uses-permission
+        android:name="android.permission.WAKE_LOCK" />
+
+    <!-- ─────────────────────────────────────────────────────
+         APPLICATION
+         ───────────────────────────────────────────────────── -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FallDetectionApp"
         android:usesCleartextTraffic="true">
 
-        <!-- Splash Activity (Launcher) -->
+        <!-- ── Phase 4 Activities ─────────────────────────── -->
+
+        <activity
+            android:name=".MyWatchersActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".IncomingRequestsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".AddFamilyMemberActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.FallDetectionApp" />
+
+        <activity
+            android:name=".FamilyDashboardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- ── Core Activities ────────────────────────────── -->
+
+        <!-- Splash (Launcher entry point) -->
         <activity
             android:name=".SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.FallDetectionApp">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -76,12 +147,20 @@
             android:exported="false"
             android:screenOrientation="portrait"
             android:parentActivityName=".MainActivity">
-
-            <!-- Back navigation support (for older Android) -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
+        <!-- ── Phase 5 – FallDetectionService (GPS-aware) ── -->
+        <!-- foregroundServiceType="location" tells Android this
+             service needs location access while running in
+             foreground. Required on Android 10+ for background
+             GPS to work without being killed. -->
+        <service
+            android:name=".FallDetectionService"
+            android:exported="false"
+            android:foregroundServiceType="location" />
 
     </application>
 

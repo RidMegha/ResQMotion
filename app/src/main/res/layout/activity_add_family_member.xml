@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#F5F5F5">
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- HEADER -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            app:cardElevation="4dp" app:cardCornerRadius="0dp"
+            app:cardBackgroundColor="#6200EA">
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="16dp"
+                android:gravity="center_vertical">
+                <Button
+                    android:id="@+id/backButton"
+                    android:layout_width="wrap_content" android:layout_height="36dp"
+                    android:text="← Back" android:textSize="11sp"
+                    android:textColor="#FFFFFF" android:backgroundTint="#9C27B0"/>
+                <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Add Family Member"
+                    android:textSize="18sp" android:textStyle="bold"
+                    android:textColor="#FFFFFF" android:layout_marginStart="12dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- MY INVITE CODE -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="12dp" app:cardElevation="4dp"
+            app:cardBackgroundColor="#EDE7F6">
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🔑 Your Invite Code"
+                    android:textSize="15sp" android:textStyle="bold" android:textColor="#4A148C"/>
+                <TextView
+                    android:id="@+id/myInviteCodeText"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Loading…" android:textSize="14sp"
+                    android:textColor="#6200EA" android:layout_marginTop="8dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- OPTION A: BY CODE -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp" app:cardElevation="4dp"
+            app:cardBackgroundColor="#FFFFFF">
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Option A — Enter their Invite Code"
+                    android:textSize="15sp" android:textStyle="bold" android:textColor="#212121"/>
+                <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Ask the person to share their 6-character code with you."
+                    android:textSize="12sp" android:textColor="#757575"
+                    android:layout_marginTop="4dp"/>
+                <EditText
+                    android:id="@+id/inviteCodeInput"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="6-character code  (e.g. A3X9K2)"
+                    android:inputType="textCapCharacters" android:maxLength="6"
+                    android:layout_marginTop="12dp"/>
+                <Button
+                    android:id="@+id/sendByCodeButton"
+                    android:layout_width="match_parent" android:layout_height="48dp"
+                    android:text="Send Request by Code"
+                    android:textColor="#FFFFFF" android:backgroundTint="#6200EA"
+                    android:layout_marginTop="12dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- OPTION B: BY PHONE/EMAIL -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp" app:cardElevation="4dp"
+            app:cardBackgroundColor="#FFFFFF">
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Option B — Phone Number or Email"
+                    android:textSize="15sp" android:textStyle="bold" android:textColor="#212121"/>
+                <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Enter the phone number or email they registered with."
+                    android:textSize="12sp" android:textColor="#757575"
+                    android:layout_marginTop="4dp"/>
+                <EditText
+                    android:id="@+id/phoneEmailInput"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:hint="Phone number or email address"
+                    android:inputType="textEmailAddress" android:layout_marginTop="12dp"/>
+                <Button
+                    android:id="@+id/sendByContactButton"
+                    android:layout_width="match_parent" android:layout_height="48dp"
+                    android:text="Send Request by Phone / Email"
+                    android:textColor="#FFFFFF" android:backgroundTint="#2196F3"
+                    android:layout_marginTop="12dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ProgressBar
+            android:id="@+id/addMemberProgress"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_gravity="center" android:visibility="gone"
+            android:layout_marginBottom="24dp"
+            android:layout_marginStart="0dp" android:layout_marginEnd="0dp"/>
+
+    </LinearLayout>
+</ScrollView>

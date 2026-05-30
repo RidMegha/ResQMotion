@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#F5F5F5">
+
+    <!-- HEADER -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        app:cardElevation="4dp" app:cardCornerRadius="0dp"
+        app:cardBackgroundColor="#6200EA">
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:padding="16dp"
+            android:gravity="center_vertical">
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content" android:layout_height="36dp"
+                android:text="← Back" android:textSize="11sp"
+                android:textColor="#FFFFFF" android:backgroundTint="#9C27B0"/>
+            <TextView
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🔔 Monitoring Requests"
+                android:textSize="18sp" android:textStyle="bold"
+                android:textColor="#FFFFFF" android:layout_marginStart="12dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/emptyRequestsText"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="No requests yet.\n\nWhen someone wants to monitor you,\ntheir request will appear here."
+        android:textSize="14sp" android:textColor="#9E9E9E"
+        android:gravity="center" android:padding="32dp" android:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/requestsRecycler"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:padding="16dp" android:clipToPadding="false"/>
+
+</LinearLayout>

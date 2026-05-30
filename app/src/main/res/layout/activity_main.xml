@@ -5,334 +5,210 @@
     android:layout_height="match_parent"
     android:background="#F5F5F5"
     android:fillViewport="true">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- ══════════════════════════════════════════
-             HEADER
-             ══════════════════════════════════════════ -->
+        <!-- HEADER -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardElevation="4dp"
-            app:cardCornerRadius="0dp"
+            app:cardElevation="4dp" app:cardCornerRadius="0dp"
             app:cardBackgroundColor="#6200EA">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp">
-
-                <!-- Title row + Logout button -->
+                android:padding="16dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
-
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="🛡️ ResQMotion"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
+                        android:textSize="22sp" android:textStyle="bold"
                         android:textColor="#FFFFFF"/>
-
                     <Button
                         android:id="@+id/logoutButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
-                        android:text="Logout"
-                        android:textSize="12sp"
-                        android:textColor="#FFFFFF"
-                        android:backgroundTint="#9C27B0"
-                        android:paddingStart="12dp"
-                        android:paddingEnd="12dp"/>
-
+                        android:layout_width="wrap_content" android:layout_height="36dp"
+                        android:text="Logout" android:textSize="11sp"
+                        android:textColor="#FFFFFF" android:backgroundTint="#9C27B0"
+                        android:paddingStart="10dp" android:paddingEnd="10dp"/>
                 </LinearLayout>
-
-                <!-- Welcome text – filled from Firebase -->
                 <TextView
                     android:id="@+id/headerWelcomeText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Welcome!"
-                    android:textSize="14sp"
-                    android:textColor="#E1BEE7"
-                    android:layout_marginTop="4dp"/>
-
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Welcome!" android:textSize="13sp"
+                    android:textColor="#E1BEE7" android:layout_marginTop="4dp"/>
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="AI-Powered Fall Detection"
-                    android:textSize="12sp"
-                    android:textColor="#CE93D8"
+                    android:textSize="11sp" android:textColor="#CE93D8"
                     android:layout_marginTop="2dp"/>
-
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- ══════════════════════════════════════════
-             STATUS CARD
-             ══════════════════════════════════════════ -->
+        <!-- FAMILY MONITORING BUTTON (Phase 4) -->
+        <Button
+            android:id="@+id/familyButton"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="👨‍👩‍👧  Family Monitoring Dashboard"
+            android:textSize="15sp" android:textStyle="bold"
+            android:textColor="#FFFFFF" android:backgroundTint="#00897B"
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- STATUS CARD -->
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp" app:cardElevation="4dp"
             app:cardBackgroundColor="#FFFFFF">
-
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <!-- Monitoring status row -->
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
                     <View
                         android:id="@+id/statusIndicator"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
+                        android:layout_width="16dp" android:layout_height="16dp"
                         android:background="@drawable/circle_indicator"/>
-
                     <TextView
                         android:id="@+id/statusText"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="○ Monitoring Stopped"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="#757575"
-                        android:layout_marginStart="12dp"/>
-
+                        android:textSize="16sp" android:textStyle="bold"
+                        android:textColor="#757575" android:layout_marginStart="12dp"/>
                 </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                <View android:layout_width="match_parent" android:layout_height="1dp"
                     android:background="#E0E0E0"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="12dp"/>
-
+                    android:layout_marginTop="12dp" android:layout_marginBottom="12dp"/>
                 <TextView
                     android:id="@+id/activityText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="Activity: Waiting..."
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#212121"/>
-
+                    android:textSize="18sp" android:textStyle="bold" android:textColor="#212121"/>
                 <TextView
                     android:id="@+id/confidenceText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="Confidence: 0%"
-                    android:textSize="14sp"
-                    android:textColor="#757575"
+                    android:textSize="14sp" android:textColor="#757575"
                     android:layout_marginTop="4dp"/>
-
                 <TextView
                     android:id="@+id/sensorDataText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="Accel: 0.00 m/s²"
-                    android:textSize="12sp"
-                    android:textColor="#9E9E9E"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="monospace"/>
-
-                <!-- PHASE 3 – sync status indicator -->
+                    android:textSize="12sp" android:textColor="#9E9E9E"
+                    android:layout_marginTop="8dp" android:fontFamily="monospace"/>
                 <TextView
                     android:id="@+id/syncStatusText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="☁ Not syncing"
-                    android:textSize="12sp"
-                    android:textColor="#9E9E9E"
-                    android:layout_marginTop="6dp"
-                    android:fontFamily="monospace"/>
-
+                    android:textSize="12sp" android:textColor="#9E9E9E"
+                    android:layout_marginTop="4dp" android:fontFamily="monospace"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- ══════════════════════════════════════════
-             CONTROL BUTTONS
-             ══════════════════════════════════════════ -->
+        <!-- CONTROL BUTTONS -->
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp" app:cardElevation="4dp"
             app:cardBackgroundColor="#FFFFFF">
-
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
                 <Button
                     android:id="@+id/startButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
+                    android:layout_width="match_parent" android:layout_height="56dp"
                     android:text="▶ Start Monitoring"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:backgroundTint="#4CAF50"
-                    android:textColor="#FFFFFF"/>
-
+                    android:textSize="16sp" android:textStyle="bold"
+                    android:backgroundTint="#4CAF50" android:textColor="#FFFFFF"/>
                 <Button
                     android:id="@+id/stopButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
+                    android:layout_width="match_parent" android:layout_height="56dp"
                     android:text="⏹ Stop Monitoring"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:backgroundTint="#F44336"
-                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" android:textStyle="bold"
+                    android:backgroundTint="#F44336" android:textColor="#FFFFFF"
                     android:layout_marginTop="12dp"/>
-
                 <Button
                     android:id="@+id/emergencyButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
+                    android:layout_width="match_parent" android:layout_height="56dp"
                     android:text="⚠ Cancel Emergency Alert"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:backgroundTint="#FF9800"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginTop="12dp"
-                    android:enabled="false"/>
-
+                    android:textSize="16sp" android:textStyle="bold"
+                    android:backgroundTint="#FF9800" android:textColor="#FFFFFF"
+                    android:layout_marginTop="12dp" android:enabled="false"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- ══════════════════════════════════════════
-             USER PROFILE CARD
-             ══════════════════════════════════════════ -->
+        <!-- USER PROFILE CARD -->
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp" app:cardElevation="4dp"
             app:cardBackgroundColor="#FFFFFF">
-
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="👤 User Profile"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#212121"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:textSize="18sp" android:textStyle="bold" android:textColor="#212121"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp"
                     android:background="#E0E0E0"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"/>
-
+                    android:layout_marginTop="8dp" android:layout_marginBottom="8dp"/>
                 <TextView
                     android:id="@+id/userProfileText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:text="Loading profile…"
-                    android:textSize="14sp"
-                    android:textColor="#757575"
+                    android:textSize="14sp" android:textColor="#757575"
                     android:lineSpacingExtra="4dp"/>
-
                 <Button
                     android:id="@+id/viewProfileButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_width="match_parent" android:layout_height="48dp"
                     android:text="View / Edit Profile"
-                    android:textSize="14sp"
-                    android:backgroundTint="#6200EA"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginTop="12dp"/>
-
+                    android:textSize="14sp" android:backgroundTint="#6200EA"
+                    android:textColor="#FFFFFF" android:layout_marginTop="12dp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- ══════════════════════════════════════════
-             EMERGENCY CONTACTS CARD
-             ══════════════════════════════════════════ -->
+        <!-- EMERGENCY CONTACTS CARD -->
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="12dp" app:cardElevation="4dp"
             app:cardBackgroundColor="#FFFFFF">
-
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="📞 Emergency Contacts"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#212121"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:textSize="18sp" android:textStyle="bold" android:textColor="#212121"/>
+                <View android:layout_width="match_parent" android:layout_height="1dp"
                     android:background="#E0E0E0"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"/>
-
+                    android:layout_marginTop="8dp" android:layout_marginBottom="8dp"/>
                 <TextView
                     android:id="@+id/emergencyContactsText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:text="No emergency contacts added"
-                    android:textSize="14sp"
-                    android:textColor="#757575"
+                    android:textSize="14sp" android:textColor="#757575"
                     android:lineSpacingExtra="4dp"/>
-
                 <Button
                     android:id="@+id/manageContactsButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_width="match_parent" android:layout_height="48dp"
                     android:text="Manage Contacts"
-                    android:textSize="14sp"
-                    android:backgroundTint="#2196F3"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginTop="12dp"/>
-
+                    android:textSize="14sp" android:backgroundTint="#2196F3"
+                    android:textColor="#FFFFFF" android:layout_marginTop="12dp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

@@ -91,6 +91,8 @@ dependencies {
 
     // Firebase Analytics (optional but recommended)
     implementation("com.google.firebase:firebase-analytics")
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
 
 
     // Testing
